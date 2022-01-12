@@ -100,4 +100,4 @@ for page in pageList:
 		print(df)
 
 # store the dataframe as csv file
-df.to_scv('outData.scv')
+df.to_scv('data.csv')
