@@ -58,12 +58,12 @@ for page in pageList:
 
 		#collecting price
 		for data in soup1.findAll('div',{'promotionInfoBox col-3'}):
-			price = data.find('h2').get_text().replace('À partir de','')
+			price = data.find('h2').get_text().replace('À partir de','').replace(' ','')
 			price = price.replace(' ','').replace('\t','').replace('\n','').replace('DH','')
 			if price == 'Prixàconsulter':
 				df1['price'] = None
 			else:
-				df1['price'] = price
+				df1['price'] = int(unidecode.unidecode(price).replace(' ',''))
 
 		#collecting anouncer
 		for data in soup1.findAll('p',{'class':'link'}):
@@ -100,4 +100,4 @@ for page in pageList:
 		print(df)
 
 # store the dataframe as csv file
-df.to_scv('data.csv')
+df.to_csv('data.csv')
