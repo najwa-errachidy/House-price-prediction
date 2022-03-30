@@ -1,4 +1,4 @@
-# agenz-internship-tasks
+# House-price-prediction
 Ce repository sert de conteneur du code élaboré pour réaliser les exercices demandés.
 
 # Task 1 
